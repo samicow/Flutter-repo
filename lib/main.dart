@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 
 void main() {
-
   runApp(const MyApp());
 }
 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       home:Stack(
         alignment: AlignmentDirectional.center,
         children: [
-          Container(color: Colors.white, width: 100, height: 100,),
+          Container(color: Colors.green, width: 100, height: 100,),
           Container(color: Colors.blue, width: 50, height: 50,),
         ]
       ),
