@@ -56,26 +56,39 @@ class _TaskState extends State<Task> {
             Column(
               children: [
                 Container(
-                  color: Colors.green,
-                  height: 140,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                     color: Colors.green,
+                  ),
+                   height: 140,
                 ),
               ],
             ),
             Column(
               children: [
                 Container(
-                  color: Colors.white,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Colors.white,
+                  ),
+                  
                   height: 100,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        color: Colors.black26,
+                         decoration: BoxDecoration(
+                         borderRadius: BorderRadius.circular(4),
+                         color: Colors.black26,
+                         ),
                         width: 72,
                         height: 100,
-                        child: Image.network(
-                          widget.photo,
-                          fit: BoxFit.cover, ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(4),
+                          child: Image.network(
+                            widget.photo,
+                            fit: BoxFit.cover, ),
+                        ),
                       ),
                       Container(
                           width: 200,
