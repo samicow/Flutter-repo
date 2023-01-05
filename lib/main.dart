@@ -17,62 +17,55 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(
-        color: Colors.black,
-
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      home: Scaffold(
+        appBar: AppBar(
+           title: Text('teste 1'),
+      ),
+      body: Column(
         children: [
-          Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-          Container(color: Colors.green, width: 100, height: 100,),
-          Container(color: Colors.blue, width: 50, height: 50,),
+          Task('num1'),
+           Task('num2'),
         ],
-        ),
-         Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-          Container(color: Colors.green, width: 100, height: 100,),
-          Container(color: Colors.blue, width: 50, height: 50,),
-        ],
-        ),
-        Row(
-  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  crossAxisAlignment: CrossAxisAlignment.center,
-  children: [
-    Container(color: Colors.cyan, height: 50, width: 50,),
-    Container(color: Colors.pinkAccent, height: 50, width: 50,),
-    Container(color: Colors.purple, height: 50, width: 50,)
-  ],
-),      
-
-Container(
-  color: Colors.amber,
-  height: 50,
-  width: 540,
-  child: Text(
-    'TESTE',
-     style: TextStyle(
-      color: Colors.black,
-      fontSize: 28,
-     ),
-     textAlign: TextAlign.center,
-  ),
-),
-ElevatedButton(onPressed: (){
-  print('apertou o botão');
-},
- child: Text('Aperte botão'),
- ),
-
-        ],
-      )
-      )
-
-    );
-  }
-
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: (){}),
+      ),
+      
+      );
+      }
 }
 //==================xxxxxxxxx===========================
+
+class Task extends StatelessWidget {
+  final String nome;
+  const Task(this.nome, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+            child: Stack(
+              children:[
+ Container(
+            color: Colors.blue,
+            height: 140,
+          ),
+          Container(
+            color: Colors.white,
+            height: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    Container(
+          color: Colors.black26,
+          width: 72,
+          height: 100,
+    ),
+    Text(nome),
+    ElevatedButton(onPressed: (){}, child: Icon(Icons.arrow_drop_up))
+],
+            ),
+          )
+              ],
+            ),     
+          );
+  }
+}
