@@ -19,7 +19,16 @@ class _InitialScreenState extends State<InitialScreen> {
           title: const Text('Início'),
         ),
         body: ListView(
-          children: const [
+          children: [
+            Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextFormField(
+            decoration: const InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your username',
+            ),
+          ),
+        ),
             Task('abc', 'https://s1.static.brasilescola.uol.com.br/be/conteudo/images/imagem-em-lente-convexa.jpg' ),
             Task('def', 'https://static3.tcdn.com.br/img/img_prod/460977/boneco_e_t_o_extraterrestre_e_t_the_extraterrestrial_stunt_puppet_replica_escala_1_1_neca_8391_1_20201211172102.jpg'),
             Task('ghi', ''),
